@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<title>登入畫面</title>
+
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: orange;
+    }
+
+    .box1{
+        width: 30%;
+        border:solid 1px rgb(231, 115, 32);
+        background-color: rgb(251, 251, 251);
+        text-align: center;
+        position: absolute;
+        top:35%;
+        left:35%;
+    }
+
+	a{
+        font-size: 10pt;
+        text-decoration:underline;
+        margin: 20px;
+        color:gray
+    }
+
+    a:visited{
+        color:gray;}
+    a:hover{
+        color:lightgray}
+    a:active{
+        color:gray}
+</style>
+<body onload="getImg()">
+
+<form name="loginform" method="post" action="Login">
+    <h1 style="text-align:center;color:white;margin-top:10%">Restaurant Reservation</h1><p>
+    <h2 style="text-align:center;color:white;">---Welcome---</h2>
+    
+    <div class="box1">
+        
+            <h3 style="color:orange">會員登入</h3>
+            
+                <label for='username'>帳號:</label>
+                <input type='text' name='id'>
+                <p>
+                <label for='passwd'>密碼:</label>
+                <input type='password' name='passwd'>
+                <p>
+                <img id="my_div" src="" alt="check_pic" style="width: 100px;height:35px;">
+                <p>
+                                          請輸入驗證碼:<input id="check" name="check" type='text'  size="10" value="">
+                <p>
+                <input type='button' value='登入' onclick="checkImg()">
+                <input type='reset' value='取消'>
+                <p>
+                <a href="adduser.html">註冊會員</a> 
+                <a href="Login_rest.html">餐廳登入</a>        
+        
+    </div>
+    
+    </form>
+    
+               
+                
+    <script type="text/javascript">
+
+        var jsImg = new Array("pic/0jxFXJ.jpg","pic/BReLUc.jpg","pic/cdIo16.jpg","pic/FrVmEJ.jpg",
+        "pic/JEG16M.jpg","pic/NeLR3O.jpg","pic/Od6l2d.jpg","pic/vtdxeG.jpg","pic/wCbGIa.jpg","pic/yCijGs.jpg");
+        var word=new Array("0jxFXJ","BReLUc","cdIo16","FrVmEJ","JEG16M","NeLR3O","Od6l2d","vtdxeG","wCbGIa","yCijGs");
+        //var jsImg_len = jsImg.length;  
+        var num=Math.floor(Math.random()*10); 
+
+        var picture=jsImg[num];
+        var checkword=word[num];
+        
+                       
+        //setInterval("sequentialImg()",0);
+        function getImg(){  
+            document.getElementById("my_div").setAttribute("src",picture);
+            document.getElementById("my_div").setAttribute("alt",checkword);
+        }
+
+        function checkImg(){  
+            var checkwd=document.getElementById("check").value;     
+            if(checkword==checkwd){
+                document.loginform.submit();
+                //alert("正確");
+            }else{
+                alert("驗證碼輸入錯誤");
+            }
+
+        }
+     </script>
+
+</body>
+</html>

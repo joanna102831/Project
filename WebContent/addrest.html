@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>餐廳註冊</title>
+    <meta charset="utf-8">  
+    
+    <script language="JavaScript">
+      
+      function check_Data()
+      {	var str=document.userform;
+   		var account=/[A-Za-z0-9]+/;
+   		var passwd=/\w+/;
+   		
+   		
+   		var str1= new String(str.id.value.toUpperCase());
+   		var str2= new String(str.pw.value.toUpperCase());
+   		var str3= new String(str.user.value);
+   		var str4= new String(str.total.value);
+   		var str5= new String(str.tel.value);
+   		
+   		if(account.test(str1)==false){
+   			alert("帳號格式輸入錯誤")
+   			reinput1();
+   		}
+   		else if(passwd.test(str2)==false){
+   			alert("密碼格式輸入錯誤")
+   			reinput2();
+   		}
+   		else if(str3==""){
+   			alert("請填入餐廳名稱")
+   			reinput3();
+   		}else if(str4==""){
+   			alert("請填入總人數")
+   			reinput4();
+   		}else if(str5==""){
+   			alert("請填入電話號碼")
+   			reinput5();
+   		}else{
+   			str.submit();
+   		}
+   		
+      }
+	function reinput1(){
+		document.userform.id.focus();
+		document.userform.id.select();
+	} 
+	function reinput2(){
+		document.userform.pw.focus();
+		document.userform.pw.select();
+	} 
+	function reinput3(){
+		document.userform.user.focus();
+		document.userform.user.select();
+	}
+	function reinput4(){
+		document.userform.total.focus();
+		document.userform.total.select(); 
+	}
+	function reinput5(){
+		document.userform.tel.focus();
+		document.userform.tel.select();
+	}
+      
+      
+	</script>
+	<style type="text/css">
+		body{
+			width:30%;
+			margin: auto;
+		}
+
+    	div {		
+		border-style:double hidden;
+		border-width: 3px;
+		border-color: orange;
+		
+    	}
+			
+    </style>
+  </head>
+  <body>
+    <h2>基本資料</h2>
+    <form name="userform" method="post" action="rest_session">
+      <div>
+        <p>
+        <label style='color:red'>*:必須輸入</label><p>
+        *帳號 ：<input type="text" name="id" size=12 required><p>
+        *密碼 ：<input type="password" name="pw" size=8 required><p>
+        *餐廳名稱：<input type="text" name="user" size=14 required><p>
+        *人數：<input type="number" name="total" size=30 min=0 required><p> 
+        *電話：<input type="tel" name="tel" size=14 required><p>
+        
+		
+		</div>
+      <br><input type="button" value="確定" onclick="check_Data()">
+      <input type="reset" name="reset" value="重新填寫">     
+    </form>
+  </body>
+</html>
