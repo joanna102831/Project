@@ -60,7 +60,6 @@ String getpeople=(String)session.getAttribute("people");
 String gettel=(String)session.getAttribute("tel");
 session.setAttribute("ID",id);
 
-   //System.out.println(getname);
 
 %>
 <%if(session.getAttribute("ID")==null){ 
