@@ -20,10 +20,10 @@ import javax.servlet.http.HttpSession;
 public class ReOrder extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Connection dbCon = null;
+	    Connection dbCon = null;
 	    Statement stmt = null;
 	    ResultSet rs2 = null;
-		ResultSet rs3 = null;
+	    ResultSet rs3 = null;
 	    
 	    request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html;charset=utf-8");
@@ -71,15 +71,13 @@ public class ReOrder extends HttpServlet {
 	    try{ 
 	    	String str ="Update booking set tel='"+a2+"',date='"+a3+"',time='"+a4+"',number='"+a5+"',restname='"+restname+"' where NO='"+NO+"'";
 
-//	    	String str1 = "select NO from booking where id='" + id + "' and restname='" + restname + "' and date='" + a3
-//					+ "'";
-	    	
+
 	    	String str2 = "select restname,date,time,sum(number) as sumnum from booking where restname='" + restname
 					+ "' and date='" + a3 + "' and time='" + a4 + "' group by restname,date,time";
 
-			String str3 = "select total_people from restaurant where restname='"+restname+"'";
+		String str3 = "select total_people from restaurant where restname='"+restname+"'";
 			
-			String str4 = "Update booking set tel='"+oldtel+"',date='"+olddate+"',time='"+oldtime+"',number='"+oldnumber+"',restname='"+restname+"' where NO='"+NO+"'";
+		String str4 = "Update booking set tel='"+oldtel+"',date='"+olddate+"',time='"+oldtime+"',number='"+oldnumber+"',restname='"+restname+"' where NO='"+NO+"'";
 	    	
 	    	stmt.executeUpdate(str);
 	    	
@@ -94,15 +92,12 @@ public class ReOrder extends HttpServlet {
 						stmt.executeUpdate(str4);
 						response.getWriter().print("<script>alert('訂位人數已滿，若要增加人數請改選其它日期或時段，謝謝!');window.location.href='orderControl.jsp'</script>");
 
-//						out.println("<h1>訂位人數已滿，請選別的日期預訂</h1>");
 						break;
 					}
 					
 				}				
 			}
 	    	
-	        
-	        //out.println("<h2>修改訂位完成!<h2>");
 	        
 	        response.getWriter().print("<script>alert('修改訂位完成!');window.location.href='orderControl.jsp'</script>");
 	    }
