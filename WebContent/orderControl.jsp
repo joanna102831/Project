@@ -41,7 +41,7 @@ session.setAttribute("ID",ID);
         <input type="submit" value="修改訂位資料">
         <input type="button" onclick="getDate();" value="訂位編號查詢">
         <input type="button" id="btn" name="back" value="回首頁" onclick="javascript:location.href='onepage.jsp'" >
-        <!--  <a href="http://localhost:8080/Project/CallOrder2" target="_blank">訂位編號查詢</a>-->
+       
     </div>
   </form>
   <div id="content"></div>
