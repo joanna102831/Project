@@ -41,15 +41,11 @@ public class Adduser_Servlet extends HttpServlet {
 			String tel=(String) session.getAttribute("tel");
 			
 			
-			//String sql="insert into user (ID,Password,Name,Sex,Email) values ('%s','%s','%s','%s','%s')";
+			
 			String sql="insert into user (ID,Password,Name,Gender,Birthday,tel,Email) values ('"+id+"','"+pw+"','"+user+"','"+gender+"','"+birth+"','"+tel+"','"+email+"')";
 			rs=con.connect("rest").executeUpdate(sql);
 			
-			
-			//response.getWriter().print("<script>alert('資料是否正確')</script>");
 			response.getWriter().print("<script>alert('會員加入成功');window.location.href='Login.html'</script>");
-			//response.sendRedirect("Login.html");
-			//out.print("會員加入成功");
 			
 			
 		}catch(Exception e){
