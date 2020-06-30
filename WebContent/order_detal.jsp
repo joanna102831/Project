@@ -10,17 +10,13 @@
 	table{
 	width:800px;	
 	border-collapse:collapse;
-	/*margin:0 auto;*/
-	/*text-align:center;*/
 		
 	}
 	.seth2{
-	/*text-align:center;*/
+	
 	color:orange;
 	padding:5px;	
 	width:750px;
-	/*margin:0 auto;*/
-	/*margin-bottom:20px;*/
 	border-bottom:double 4px orange;
 	
 	}
