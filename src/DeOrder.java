@@ -49,8 +49,7 @@ public class DeOrder extends HttpServlet {
 			String str="Delete from booking where NO='"+NO+"'";
 			stmt.executeUpdate(str);
 			response.getWriter().print("<script>alert('訂位編號"+NO+"取消訂位完成!');window.location.href='orderControl.jsp'</script>");
-//			out.println(NO);
-//			out.println("取消訂位完成!");
+
 		} catch (Exception e) {
 			out.print("取消訂位失敗");
 		}
