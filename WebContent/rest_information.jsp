@@ -59,7 +59,6 @@ while(rs.next()){
    String gettel=(String)session.getAttribute("tel");
    session.setAttribute("ID",id);
 
-   //System.out.println(getname);
 
 %>
 <%if(session.getAttribute("ID")==null){ 
