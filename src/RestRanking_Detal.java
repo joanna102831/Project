@@ -58,7 +58,7 @@ public class RestRanking_Detal extends HttpServlet {
 				
 				
 			}
-			//out.print(line);
+			
 			session.setAttribute("line", line);
 			response.sendRedirect("restranking_detal.jsp");
 		
@@ -77,7 +77,7 @@ public class RestRanking_Detal extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 
