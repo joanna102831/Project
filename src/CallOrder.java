@@ -99,9 +99,7 @@ public class CallOrder extends HttpServlet {
 	    	response.setHeader("refresh", "3;url=http://localhost:8080/Project/test.jsp");
 	    	
 	    	
-//	    	response.getWriter().print("<script>alert('訂位成功');window.location.href='onepage.jsp'</script>");
-	        
-	        //response.setHeader("refresh", "10;url=http://localhost:8080/Project/onepage.jsp");
+
 	    }
 	    catch(Exception e){
 	    	out.println("資料無法輸入");
@@ -118,7 +116,7 @@ public class CallOrder extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 
