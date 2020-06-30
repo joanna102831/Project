@@ -66,9 +66,8 @@ public class Rest_information3 extends HttpServlet {
 
 	    	stmt.executeUpdate(str);
 	        
-	        //out.println("修改完成!");
 	        response.getWriter().print("<script>alert('會員資料修改完成!');window.location.href='reservation.jsp'</script>");
-	        //response.setHeader("refresh", "3;url=http://localhost:8080/Project/onepage.jsp");
+	        
 	    }
 	    catch(Exception e){
 	    	out.println("資料無法輸入");
@@ -85,7 +84,7 @@ public class Rest_information3 extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 
