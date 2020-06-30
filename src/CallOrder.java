@@ -26,8 +26,7 @@ public class CallOrder extends HttpServlet {
 	    Statement stmt = null;
 	    HttpSession session=request.getSession();
 	    
-//	    request.setCharacterEncoding("utf-8");
-//	    response.setContentType("text/html;charset=utf-8");
+
 	    request.setCharacterEncoding("UTF-8");
 	    response.setContentType("text/html;charset='UTF-8'");
 	    
@@ -95,7 +94,6 @@ public class CallOrder extends HttpServlet {
 	    	out.print("</body>");
 	    	out.print("</html>");
 	    	session.setAttribute("line",line);
-	    	out.print("測試");
 	    	response.setHeader("refresh", "3;url=http://localhost:8080/Project/test.jsp");
 	    	
 	    	
