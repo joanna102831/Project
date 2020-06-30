@@ -61,16 +61,10 @@ public class CallOrder2 extends HttpServlet {
 	    }
 
 	    try{ 
-//	    	out.print("<!DOCTYPE HTML>");
-//	    	out.print("<html lang='zh-TW'>");
-//	    	out.print("<head><meta charset='utf-8'></head>");
-//	    	out.print("<body>");
+
 	    	
 	    	String str="select * from booking where id='"+ID+"' and date>'"+today+"'";
-//	    	out.print("<table border='5' width='650'><tr>");
-//	    	
-//	    	out.print("<th>帳號</th><th>訂位編號</th><th>餐廳名稱</th><th>訂位人</th><th>聯絡電話</th><th>訂位日期</th><th>訂位時間</th><th>訂位人數</th></tr>");
-	    	
+	
 	    	rs=stmt.executeQuery(str);
 	    	while(rs.next()){
 	    		line=line+"<tr><td>";
@@ -82,16 +76,13 @@ public class CallOrder2 extends HttpServlet {
 	        	line=line+rs.getString("date")+"</td><td>";
 	        	line=line+rs.getString("time")+"</td><td>";
 	        	line=line+rs.getString("number")+"</td></tr>";
-	            //out.print(line);
-	        	
+	            
 	    	}
 	    	session.setAttribute("line", line);
 	    	response.sendRedirect("order_detal.jsp");
-//	    	out.print("</body>");
-//	    	out.print("</html>");
 	    	
 	    	
-	    	//response.setHeader("refresh", "3;url=http://localhost:8080/Project/test.jsp");
+	    
 	    }
 	    catch(Exception e){
 	    	out.println("資料無法輸入");
