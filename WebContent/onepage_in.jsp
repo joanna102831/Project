@@ -130,32 +130,6 @@
 <%
 String ID=(String)session.getAttribute("ID");
 session.setAttribute("ID", ID);
-//String id=(String)session.getAttribute("ID");
-//session.setAttribute("id", ID);
-
-//Connection con = null;
-//Statement stmt = null;
-//ResultSet rs ;
-
-//String sDriver="org.mariadb.jdbc.Driver";
-//String url="jdbc:mariadb://localhost/rest";
-
-//Class.forName(sDriver);
-//con=DriverManager.getConnection(url,"root","1234");
-//stmt=con.createStatement();
-//String str="select * from booking where id='"+ID+"'";
-//rs=stmt.executeQuery(str);
-//while(rs.next()){
-	//session.setAttribute("id", rs.getString("ID"));
-	//session.setAttribute("restname", rs.getString("restname"));
-	//session.setAttribute("name", rs.getString("name"));
-	//session.setAttribute("tel", rs.getString("tel"));
-	//session.setAttribute("number", rs.getString("number"));
-	//session.setAttribute("date", rs.getString("date"));
-	//session.setAttribute("time", rs.getString("time"));
-	
-//}
-
 %>
 
 </body>
