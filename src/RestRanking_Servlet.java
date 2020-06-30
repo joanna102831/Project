@@ -21,7 +21,7 @@ public class RestRanking_Servlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
@@ -40,7 +40,7 @@ public class RestRanking_Servlet extends HttpServlet {
 		
 		
 		try {
-		//restname="原燒";
+		
 		restname=(String) session.getAttribute("restname");
 		session.setAttribute("restname", restname);
 		
@@ -76,7 +76,7 @@ public class RestRanking_Servlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		doGet(request, response);
 	}
 
