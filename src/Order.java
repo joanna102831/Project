@@ -99,8 +99,7 @@ public class Order extends HttpServlet {
 					while (rs.next()) {
 						out.println("<center><h2>訂位完成!</h2></center>");
 						out.println("\n");
-						out.println(
-								"<center><h1>訂位編號為：</h1>" + "<h1>" + rs.getString("NO") + "</h1>" + "<h2>修改訂位須以訂位編號來查詢修改</h2></center>");
+						out.println("<center><h1>訂位編號為：</h1>" + "<h1>" + rs.getString("NO") + "</h1>" + "<h2>修改訂位須以訂位編號來查詢修改</h2></center>");
 						break outer;
 					}
 				}
