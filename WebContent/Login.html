@@ -73,14 +73,12 @@
         var jsImg = new Array("pic/0jxFXJ.jpg","pic/BReLUc.jpg","pic/cdIo16.jpg","pic/FrVmEJ.jpg",
         "pic/JEG16M.jpg","pic/NeLR3O.jpg","pic/Od6l2d.jpg","pic/vtdxeG.jpg","pic/wCbGIa.jpg","pic/yCijGs.jpg");
         var word=new Array("0jxFXJ","BReLUc","cdIo16","FrVmEJ","JEG16M","NeLR3O","Od6l2d","vtdxeG","wCbGIa","yCijGs");
-        //var jsImg_len = jsImg.length;  
+        
         var num=Math.floor(Math.random()*10); 
 
         var picture=jsImg[num];
         var checkword=word[num];
         
-                       
-        //setInterval("sequentialImg()",0);
         function getImg(){  
             document.getElementById("my_div").setAttribute("src",picture);
             document.getElementById("my_div").setAttribute("alt",checkword);
@@ -90,7 +88,7 @@
             var checkwd=document.getElementById("check").value;     
             if(checkword==checkwd){
                 document.loginform.submit();
-                //alert("正確");
+               
             }else{
                 alert("驗證碼輸入錯誤");
             }
