@@ -19,7 +19,7 @@ import project.Connect;
 public class RestRanking_Detal extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
@@ -34,7 +34,6 @@ public class RestRanking_Detal extends HttpServlet {
 		try {
 		
 		String restname=(String)session.getAttribute("restname");
-		//session.setAttribute("restname",restname);
 		
 		
 		String id=request.getParameter("id");
@@ -66,7 +65,7 @@ public class RestRanking_Detal extends HttpServlet {
 			
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 
