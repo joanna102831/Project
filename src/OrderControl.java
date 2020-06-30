@@ -53,11 +53,7 @@ public class OrderControl extends HttpServlet {
 	    String today2=String.valueOf(today);
 	    SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
 	    
-	   
-//	    String a2=request.getParameter("tel");
-//	    String a3=request.getParameter("birthday");
-//	    String a4=request.getParameter("email");
-	        
+	
 	    try{     
 	    	Class.forName(sDriver);
 	    }
@@ -112,11 +108,9 @@ public class OrderControl extends HttpServlet {
 			
            if(check){
 			    response.sendRedirect("orderC.jsp");
-			}else{//不知道有沒有其他方法 可以顯示出失敗
+			}else{
 				response.getWriter().print("<script>alert('訂位編號輸入錯誤');window.location.href='orderControl.jsp'</script>");}
 
-	    	
-	        
 	        
 	    }
 	    catch(Exception e){
