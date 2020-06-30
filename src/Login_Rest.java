@@ -20,16 +20,13 @@ public class Login_Rest extends HttpServlet {
 
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		// TODO Auto-generated method stub
+		
 		
 			ResultSet rs=null;
 			HttpSession session=request.getSession();
 			
 			Connect con=new Connect();
-			
-		    
-		  //使用者輸入內容
+		
 			request.setCharacterEncoding("utf-8");
 			String id=request.getParameter("id");
 			String passwd=request.getParameter("passwd");
@@ -65,12 +62,9 @@ public class Login_Rest extends HttpServlet {
 				if(check){
 					
 					response.getWriter().print("<script>alert('歡迎使用');window.location.href='reservation'</script>");
-//					out.print("<h1>歡迎使用</h1>");
-					//成功登入後的轉址位置response.sendRedirect("Login_Error.html");
-				}else{//不知道有沒有其他方法 可以顯示出失敗
+
+				}else{
 					response.getWriter().print("<script>alert('帳號或密碼錯誤');window.location.href='Login_rest.html'</script>");}
-				
-				
 				
 				
 			} catch (SQLException e) {
