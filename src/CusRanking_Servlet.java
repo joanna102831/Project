@@ -20,8 +20,7 @@ public class CusRanking_Servlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-
+		
 		ResultSet rs = null;
 		Connect con = new Connect();
 
@@ -39,10 +38,7 @@ public class CusRanking_Servlet extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		// ===================================
-
 		
-		//String userid="a12378";
 		String userid = (String) session.getAttribute("ID");
 
 		session.setAttribute("ID", userid);
@@ -57,8 +53,6 @@ public class CusRanking_Servlet extends HttpServlet {
 			
 			
 			while (rs.next()) {
-				//session.setAttribute(rank, rs.getString("restname"));
-				
 				name=rs.getString("restname");
 				line=line+"<tr><td>第"+inrank+"名</td><td>";
 				line=line+"<a href=cusdetal?name="+name+">";
