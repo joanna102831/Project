@@ -38,11 +38,11 @@ public class Order extends HttpServlet {
 		String password = "1234";
 		String url = "jdbc:mariadb://localhost/rest";
 
-		String a1 = request.getParameter("name");
-		String a2 = request.getParameter("tel");
-		String a3 = request.getParameter("date");
-		String a4 = request.getParameter("time");
-		String a5 = request.getParameter("number");
+		String name = request.getParameter("name");
+		String tel = request.getParameter("tel");
+		String date = request.getParameter("date");
+		String time = request.getParameter("time");
+		String number = request.getParameter("number");
 		String restname = (String) session.getAttribute("restname");
 		String id = (String) session.getAttribute("ID");
 		session.setAttribute("ID", id);
@@ -63,19 +63,19 @@ public class Order extends HttpServlet {
 		}
 
 		try {
-			String str = "INSERT INTO booking(name,tel,date,time,number,restname,ID) VALUES ('" + a1 + "','" + a2
-					+ "','" + a3 + "','" + a4 + "','" + a5 + "','" + restname + "','" + id + "')";
+			String str = "INSERT INTO booking(name,tel,date,time,number,restname,ID) VALUES ('" + name + "','" + tel
+					+ "','" + date + "','" + time + "','" + number + "','" + restname + "','" + id + "')";
 
-			String str1 = "select NO from booking where id='" + id + "' and restname='" + restname + "' and date='" + a3
-					+ "' and name='"+a1+"' and tel='"+a2+"' and time='"+a4+"' and number='"+a5+"' order by NO desc";
+			String str1 = "select NO from booking where id='" + id + "' and restname='" + restname + "' and date='" + date
+					+ "' and name='"+name+"' and tel='"+tel+"' and time='"+time+"' and number='"+number+"' order by NO desc";
 
 			String str2 = "select restname,date,time,sum(number) as sumnum from booking where restname='" + restname
-					+ "' and date='" + a3 + "' and time='" + a4 + "' group by restname,date,time";
+					+ "' and date='" + date + "' and time='" + time + "' group by restname,date,time";
 
 			String str3 = "select total_people from restaurant where restname='"+restname+"'";
 			
-			String str4 = "Delete from booking where name='" + a1 + "'and tel='" + a2+ "' and date='" + a3 + "' and time='" + a4 + "' and "
-					+ "number='" + a5 + "' and restname='" + restname + "' and ID='" + id + "'";
+			String str4 = "Delete from booking where name='" + name + "'and tel='" + tel+ "' and date='" + date + "' and time='" + time + "' and "
+					+ "number='" + number + "' and restname='" + restname + "' and ID='" + id + "'";
 
 			stmt.executeUpdate(str);
 
